@@ -1,29 +1,33 @@
 This is a scaffolding project to create a new *devcontainer* environment for a Python application in VS Code
 
-## Assumptions
-This is an opiniated piece of work that. It assumes VS Code development on windows using WSL 2
-You will get ruff and pytest as part of the project
-Some VS Code settings are supplied
-Even though working in a docker environment, still a virtual environment is created for the code.
+## Purpose
+This project provides a pre-configured development environment (DevContainer) for Python applications in Visual Studio Code.
+
+## Assumptions:
+- You're using Windows with WSL 2.
+- You'll need VS Code with the Dev Containers extension installed.
+- You'll use Python's pyproject.toml for package management.
+- You'll leverage Azure Pipelinesfor CI/CD
 
 ## Getting started
 To get started:
-    1. Make sure you have the dev containers extension is VS Code installed.
+1. Make sure you have the __Dev Containers extension__ in VS Code installed.
+2. __Clone__ this repo
+    ```
+    git clone https://dev.azure.com/riskatwork/Scaffolding/_git/PythonDevcontainer
+    ```
+3. __Customize settings__:
+    - __Rename__ ```src/app``: Change the directory name ot match your projects name. Also update:
 
-    2. Clone this repo
+    - __Update__ the ```pyproject.toml```: Modify the ```name``` and ```packages``` fields to reflect your project's details. NOTE: the name of the workspaceFolder in the devcontainer.json and the application directory in the DockerFile should not be changed.
+    - __Adjust dependencies__: Update your ```pyproject.toml``` with the dependencies you need.
 
-    3. Change the name of the directory src/app to whatever package you want to use. Also change:
 
-        - the name app both under name and in packages in pyproject.toml
+4. __Review project files__:
+    - __Configure CI/CD__: Update or replcate the existing azure pipeline to suit your requirements
+    - Update the ```README.md```
+    - Examine the ```.dockerignore``` and ```.gitignore``` files to ensure they're appropriate for you
 
-        NOTE: the name of the workspaceFolder in the devcontainer.json should NOT be updated
+5. __Write your code__: Create your python files within the ```src``` directory
 
-    4. Update the pyproject.toml dependencies to whatever you need. Consider if you want to remove poetry.lock from the .gitignore
-    
-    5. Add your code
 
-    6. Add or update the azure pipeline (or replace with a github one)
-
-    7. Review the .dockerignore and .gitignore files
-
-    8. Update the Readme under app/src
