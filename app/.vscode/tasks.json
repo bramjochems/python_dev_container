@@ -1,0 +1,43 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Lint and Format with Ruff",
+            "type": "shell",
+            "command": "poetry",
+            "args": ["run", "ruff", "check", ".", "--fix", "--exit-non-zero-on-fix"],
+            "group": "build",
+            "problemMatcher": ["$ruff"]
+        },
+        {
+            "label": "Update Dependencies",
+            "type": "shell",
+            "command": "poetry update",
+            "group": "build"
+        },
+        {
+            "label": "Run Tests with Pytest",
+            "type": "shell",
+            "command": "poetry run pytest",
+            "group": "test"
+        },
+        {
+            "label": "Build Docker Image (Base)",
+            "type": "shell",
+            "command": "docker build -t myapp:base --target base -f ../docker/Dockerfile ..",
+            "group": "build"
+        },
+        {
+            "label": "Build Docker Image (Builder)",
+            "type": "shell",
+            "command": "docker build -t myapp:development --target builder -f ../docker/Dockerfile ..",
+            "group": "build"
+        },
+        {
+            "label": "Build Docker Image (Production)",
+            "type": "shell",
+            "command": "docker build -t myapp:production --target production -f ../docker/Dockerfile ..",
+            "group": "build"
+        }
+    ]
+}

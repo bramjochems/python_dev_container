@@ -1,0 +1,35 @@
+# Ignore Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignore virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Ignore development artifacts
+build/
+dist/
+*.egg-info/
+
+# Ignore testing and coverage files
+*.cover
+*.log
+.coverage
+.cache/
+
+# Ignore VS Code settings
+.vscode/
+
+# Ignore temporary files
+*.tmp
+*.temp
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Ignore Dockerfile itself if you want to avoid accidentally copying
+Dockerfile

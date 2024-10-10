@@ -1,0 +1,45 @@
+# Python cache
+__pycache__/
+*.py[cod]
+
+.venv/
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+eggs-info/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+
+# Pytest cache
+.pytest_cache/
+.cache/
+*.cover
+coverage.xml
+*.log
+
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# Temporary files
+*.tmp
+*.temp
+
+# Other
+*.sqlite3
+*.env
+*.ruff_cache
+
+# Poetry lock file since this is a scaffolding project
+poetry.lock
+
